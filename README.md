@@ -1,5 +1,56 @@
 # IshitasIA
 
+This repository contains a Java Swing application backed by an SQLite database for managing a school nurse's office. On first run the program creates `data/clinic.db` and seeds it with sample records so the interface can be explored with realistic data. The current implementation provides:
+
+- Role-based login for nurse and teachers.
+- Nurse dashboard with search to view student profiles.
+- Teacher form to send digital nurse slips.
+
+The original Criterion A planning document follows below for reference.
+
+## Building
+
+1. Download the SQLite JDBC driver:
+
+   ```sh
+   curl -L -o sqlite-jdbc.jar https://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.36.0.3/sqlite-jdbc-3.36.0.3.jar
+   ```
+
+2. Compile the application:
+
+   **macOS/Linux**
+
+   ```sh
+   javac -cp sqlite-jdbc.jar -d bin $(find src -name '*.java')
+   ```
+
+   **Windows (CMD or PowerShell)**
+
+   ```cmd
+   dir /s /b src\*.java > sources.txt
+   javac -cp sqlite-jdbc.jar -d bin @sources.txt
+   ```
+
+3. Run the GUI (requires a graphical environment):
+
+   **macOS/Linux**
+
+   ```sh
+   java -cp bin:sqlite-jdbc.jar Main
+   ```
+
+   **Windows**
+
+   ```cmd
+   java -cp "bin;sqlite-jdbc.jar" Main
+   ```
+
+On startup the application initializes `data/clinic.db` and seeds it with sample records. If the file is deleted it will be recreated on the next run.
+
+The application stores information in `data/clinic.db`. If the file is removed, it will be recreated with the same sample records on next launch.
+
+# IshitasIA
+
 Criterion A: Planning
 
 Scenario:
