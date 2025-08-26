@@ -1,5 +1,35 @@
 # IshitasIA
 
+This repository contains a Java Swing application backed by an SQLite database for managing a school nurse's office. The current implementation provides:
+
+- Role-based login for nurse and teachers.
+- Nurse dashboard with search to view student profiles.
+- Teacher form to send digital nurse slips.
+
+The original Criterion A planning document follows below for reference.
+
+## Building
+
+1. Download the SQLite JDBC driver:
+
+   ```sh
+   curl -L -o sqlite-jdbc.jar https://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.44.1.0/sqlite-jdbc-3.44.1.0.jar
+   ```
+
+2. Compile the application:
+
+   ```sh
+   javac -cp sqlite-jdbc.jar -d bin $(find src -name '*.java')
+   ```
+
+3. Run the GUI (requires a graphical environment):
+
+   ```sh
+   java -cp bin:sqlite-jdbc.jar Main
+   ```
+
+# IshitasIA
+
 Criterion A: Planning
 
 Scenario:
